@@ -11,7 +11,7 @@ export default function Projects() {
         "A smart transport management system with route tracking, vehicle rental, student management and real-time Firebase integration.",
       tech: ["React Native", "Firebase", "Next.js"],
       github: "#",
-      demo: "#",
+      live: "#",
     },
     {
       title: "Student Guidance Portal",
@@ -19,15 +19,15 @@ export default function Projects() {
         "An academic guidance platform that helps students with degree planning, course selection and university information.",
       tech: ["Next.js", "Tailwind CSS", "Firebase"],
       github: "#",
-      demo: "#",
+      live: "#",
     },
     {
       title: "SafeX Portfolio Website",
       description:
         "A modern responsive portfolio website built during the SafeX Internship using Next.js, Tailwind CSS and Framer Motion.",
       tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      github: "#", //github: "https://github.com/yourusername/safex-portfolio",
-      demo: "#",   //demo: "https://your-portfolio.vercel.app",
+      github: "https://github.com/mohammadabdurrehman97-wq/safex-portfolio",
+      live: "https://safex-portfolio.vercel.app",
     },
   ];
 
@@ -67,12 +67,9 @@ export default function Projects() {
                 duration: 0.5,
                 delay: index * 0.15,
               }}
-              whileHover={{
-                y: -10,
-              }}
+              whileHover={{ y: -10 }}
               className="bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-blue-500 transition"
             >
-
               {/* Project Header */}
               <div className="h-40 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center">
                 <h3 className="text-2xl font-bold text-white text-center px-4">
@@ -82,7 +79,6 @@ export default function Projects() {
 
               {/* Content */}
               <div className="p-6">
-
                 <p className="text-gray-400 leading-7">
                   {project.description}
                 </p>
@@ -105,6 +101,7 @@ export default function Projects() {
                   <a
                     href={project.github}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-slate-800 hover:bg-blue-600 transition px-4 py-2 rounded-xl"
                   >
                     <FaGithub />
@@ -112,8 +109,9 @@ export default function Projects() {
                   </a>
 
                   <a
-                    href={project.demo}
+                    href={project.live}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 border border-blue-500 hover:bg-blue-600 transition px-4 py-2 rounded-xl"
                   >
                     <FaExternalLinkAlt />
@@ -121,14 +119,11 @@ export default function Projects() {
                   </a>
 
                 </div>
-
               </div>
-
             </motion.div>
           ))}
 
         </div>
-
       </div>
     </section>
   );
