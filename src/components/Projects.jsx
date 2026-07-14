@@ -7,27 +7,63 @@ export default function Projects() {
   const projects = [
     {
       title: "Transport Operations & Safety Management System",
+      badge: "Final Year Project",
       description:
-        "A smart transport management system with route tracking, vehicle rental, student management and real-time Firebase integration.",
-      tech: ["React Native", "Firebase", "Next.js"],
+        "A smart transport management system featuring route tracking, vehicle rental, student management, real-time monitoring, and Firebase integration. Developed as my Final Year Project.",
+      tech: [
+        "React Native",
+        "Next.js",
+        "Firebase",
+        "Tailwind CSS",
+      ],
       github: "#",
       live: "#",
     },
     {
-      title: "Student Guidance Portal",
+      title: "SafeX Student Pick & Drop - Notifications Module",
+      badge: "Internship Project",
       description:
-        "An academic guidance platform that helps students with degree planning, course selection and university information.",
-      tech: ["Next.js", "Tailwind CSS", "Firebase"],
+        "Developed a full-stack Notifications Module during the SafeX Internship using Next.js, FastAPI, MySQL, REST APIs, and Tailwind CSS. The module notifies parents when the school vehicle approaches pickup and drop locations.",
+      tech: [
+        "Next.js",
+        "FastAPI",
+        "MySQL",
+        "REST API",
+        "Tailwind CSS",
+        "Git",
+      ],
+      github:
+        "https://github.com/mohammadabdurrehman97-wq/SafeX-Week2-Notifications-Module",
+      live: "#",
+    },
+    {
+      title: "Student Guidance Portal",
+      badge: "Academic Project",
+      description:
+        "An academic guidance platform that helps students with degree planning, course selection, university information, and academic decision making.",
+      tech: [
+        "Next.js",
+        "Firebase",
+        "Tailwind CSS",
+      ],
       github: "#",
       live: "#",
     },
     {
       title: "SafeX Portfolio Website",
+      badge: "Internship Project",
       description:
-        "A modern responsive portfolio website built during the SafeX Internship using Next.js, Tailwind CSS and Framer Motion.",
-      tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/mohammadabdurrehman97-wq/safex-portfolio",
-      live: "https://safex-portfolio.vercel.app",
+        "A modern responsive portfolio website built during the SafeX Internship using Next.js, Tailwind CSS, Framer Motion, and React Icons.",
+      tech: [
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Icons",
+      ],
+      github:
+        "https://github.com/mohammadabdurrehman97-wq/safex-portfolio",
+      live:
+        "https://safex-portfolio.vercel.app",
     },
   ];
 
@@ -53,10 +89,10 @@ export default function Projects() {
           transition={{ delay: 0.2 }}
           className="text-center text-gray-400 mb-14 text-lg"
         >
-          Here are some projects I have built using modern web technologies.
+          Here are some of my featured software development projects built using modern technologies.
         </motion.p>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
 
           {projects.map((project, index) => (
             <motion.div
@@ -67,24 +103,35 @@ export default function Projects() {
                 duration: 0.5,
                 delay: index * 0.15,
               }}
-              whileHover={{ y: -10 }}
-              className="bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-blue-500 transition"
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+              }}
+              className="bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-blue-500 transition-all duration-300"
             >
-              {/* Project Header */}
-              <div className="h-40 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center">
-                <h3 className="text-2xl font-bold text-white text-center px-4">
+              {/* Header */}
+              <div className="h-44 bg-gradient-to-br from-blue-600 to-cyan-500 flex flex-col items-center justify-center px-5">
+
+                <span className="mb-3 bg-white/20 backdrop-blur px-4 py-1 rounded-full text-sm font-medium">
+                  {project.badge}
+                </span>
+
+                <h3 className="text-2xl font-bold text-center">
                   {project.title}
                 </h3>
+
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <p className="text-gray-400 leading-7">
+
+                <p className="text-gray-400 leading-7 min-h-[120px]">
                   {project.description}
                 </p>
 
-                {/* Tech Badges */}
+                {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mt-6">
+
                   {project.tech.map((item, i) => (
                     <span
                       key={i}
@@ -93,6 +140,7 @@ export default function Projects() {
                       {item}
                     </span>
                   ))}
+
                 </div>
 
                 {/* Buttons */}
@@ -119,7 +167,9 @@ export default function Projects() {
                   </a>
 
                 </div>
+
               </div>
+
             </motion.div>
           ))}
 
